@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'store',
     'cart',
     'orders'
+    'storages'
 ]
 
 LOGIN_URL = 'login'
@@ -139,3 +140,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+DROPBOX_OAUTH2_TOKEN = 'ojx-mbnpy-cAAAAAAAAAAapyG0RVL1BtQG_ZPlGXtNATPUOrnnUyQZrVLAIrkwNT'
+
+# Django Heroku
+import django_heroku
+django_heroku.settings(locals())
+
